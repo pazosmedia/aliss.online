@@ -18,6 +18,22 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=4088420697941251&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Facebook Pixel Code -->
+  <script type="text/javascript">
+  var newUrl = location.pathname + location.search;
+
+  (function(window, location) {
+  history.replaceState(null, document.title, newUrl+"#!/backbutton");
+  history.pushState(null, document.title, newUrl);
+  window.addEventListener("popstate", function() {
+  if(location.hash === "#!/backbutton") {
+  history.replaceState(null, document.title, newUrl);
+  setTimeout(function(){
+  location.replace("https://aliss.com.br/br/");
+  },0);
+  }
+  }, false);
+  }(window, location));
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script type="text/javascript">
